@@ -1,0 +1,78 @@
+div.sub_con_fondo_verde {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    front-
+}
+div.con_fondo_verde {
+    background-color: green;
+    /* Puedes ajustar otros estilos, como el color del texto o el tamaño */
+    color: white;
+    padding: 10px;
+}
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.content {
+    padding: 20px;
+}
+
+/* Cambia los colores, fuentes y estilos según tus preferencias */
+/*Menu despegable */
+#menuInicio {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0,2);
+    z-index: 1;
+}
+#menuInicio a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+}
+#menuInicio a:hover {
+    background-color: #ddd;
+}
+/* Estilos para la barra de navegación */
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+}

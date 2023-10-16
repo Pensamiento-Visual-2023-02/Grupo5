@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Título de la página</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="javascript.js"></script>
+</head>
+<body>
+    <div class="con_fondo_verde">
+        <h1>Calentamiento Global</h1>
+        <p>Como el consumo y la producción de alimentos afecta al calentamiento global.</p>
+    </div>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" id="inicioBtn">Inicio</a>
+                    <div id="menuInicio">
+                        <a href="#seccion1">Mapa</a>
+                        <a href="#seccion2">Alimentos</a>
+                        <a href="#seccion3">Gráfico</a>
+                    </div>
+                </li>
+                <li><a href="#seccion4">Acerca de</a></li>
+                <li><a href="#seccion5">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="con_fondo_verde" id="seccion1">
+        <h1>Emisiones de carbono a nivel global</h1>
+        <p>Contenido de la sección 1.</p>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+        <script type="module">
+            import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+            import define from "https://api.observablehq.com/@panpanan/world-map.js?v=4";
+            new Runtime().module(define, name => {
+            if (name === "viewof year") return new Inspector(document.querySelector("#observablehq-viewof-year-6cebbf96"));
+            if (name === "map") return new Inspector(document.querySelector("#observablehq-map-6cebbf96"));
+            return ["format"].includes(name);
+            });
+        </script>
+        <div id="observablehq-viewof-year-6cebbf96"></div>
+        <div class="legend"></div>
+        <div id="observablehq-map-6cebbf96"></div>
+        <p>Credit: <a href="https://observablehq.com/@panpanan/world-map">World Map by Panacea WU</a></p>
+    </div>
+
+    
+    <div class="seccion" id="seccion2"> 
+
+        <h1>Emisiones segun el tipo de alimento</h1>
+        <p>Contenido de la sección 2.</p>
+        <section class="alimentos">
+            <button onclick="toggleGraph(1)">carne</button>
+        <div id="chartContainer1" >
+          <canvas id="chart1" width="200" height="100"></canvas>
+        </div>
+        <button onclick="toggleGraph(2)">pescado</button>
+        <div id="chartContainer2" ></div>
+          <canvas id="chart2" width="200" height="100"></canvas>
+        </div>
+        <button onclick="toggleGraph(3)">frutas y verduras</button>
+        <div id="chartContainer3" >
+          <canvas id="chart3" width="200" height="100"></canvas>
+        </div>
+       
+        <button onclick="toggleGraph(4)">productos lacteos</button>
+        <div id="chartContainer4" >
+          <canvas id="chart4" width="200" height="100"></canvas>
+        </div>
+       
+        <button onclick="toggleGraph(6)">comparacion</button>
+        <div id="chartContainer5" >
+          <canvas id="chart6" width="200" height="100"></canvas>
+        </div>
+      
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="javascript.js"></script>
+        </section>
+        <div class="con_fondo_verde">
+            <h1>Breve explicacion de como cada alimento produce emisiones de carbono</h1>
+        
+    </div>
+    
+    <div class="seccion" id="seccion3">
+        <h1>Grafico</h1>
+        <p>Contenido de la sección 3.</p>
+        <section class="grafico">
+            <!-- Aquí puedes agregar tu imagen -->
+            <img src="https://lh5.googleusercontent.com/88VfYTfZWk5cmkJAhw1gEbo7aHkbI2QFXZWRwq0BxK5mOA9Z1-f-MOBhPUFMZVCccYuaCtnkGY8XP8Y-6Hip13KbVoefd-Fzn5lir94BjPO9gc7fC6Tgrnvl9HCL5fzO-Kozs0psGqZidKOTozlZPTMqziv1dSP44gh2X5Fw6VROcWEeaubof61TkehV" alt="Grafico">
+        </section>
+        <div class="con_fondo_verde">
+            <h1>Breve explicacion del grafico</h1>
+    </div>
+
+    <script>
+        // Función para mostrar/ocultar el menú de "Inicio"
+        const inicioBtn = document.getElementById("inicioBtn");
+        const menuInicio = document.getElementById("menuInicio");
+
+        inicioBtn.addEventListener('click', function() {
+            if (menuInicio.style.display === "block") {
+                menuInicio.style.display = "none";
+            } else {
+                menuInicio.style.display = "block";
+            }
+        });
+    </script>
+     
+</body>
+</html>
