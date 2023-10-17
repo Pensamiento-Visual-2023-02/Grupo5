@@ -2,8 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Título de la página</title>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="partecss.css">
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="javascript.js"></script>
@@ -24,11 +26,22 @@
                         <a href="#seccion3">Gráfico</a>
                     </div>
                 </li>
-                <li><a href="#seccion4">Acerca de</a></li>
-                <li><a href="#seccion5">Contacto</a></li>
+                <li><a href="#inicio">Acerca de</a></li>
+                <li><a href="#conclusion">Contacto</a></li>
+                
+                
             </ul>
         </nav>
     </header>
+
+    <div id="inicio">
+        <div class="con_fondo_verde" id="seccion1"></div>
+            <h1>Bienvenido a nuestra página</h1>
+            <p>El calentamiento global es una consecuencia directa del aumento de los gases de efecto invernadero. estos mantienen el calor del sol dentro de la atmósfera y son esenciales para lograr que haya vida en el planeta, sin embargo, durante las últimas décadas, ha habido un creciente incremento en estos gases provocando un aumento considerable y notorio en la temperatura del planeta <p>
+
+        </p>
+
+        </div>
 
 
     <div class="con_fondo_verde" id="seccion1">
@@ -48,22 +61,74 @@
         <div class="legend"></div>
         <div id="observablehq-map-6cebbf96"></div>
         <p>Credit: <a href="https://observablehq.com/@panpanan/world-map">World Map by Panacea WU</a></p>
+        <div class="contenedor-imagenes">
+            <img src="imagen1.jpg" alt="Colores Mapa" id="Colores Mapa">
+        </div>
     </div>
+            <h1>Breve explicacion de como cada alimento produce emisiones de carbono</h1>
+        
+    <div class="seccion" id="seccion2">
 
+        <p>Selecciona un alimento para ver la informacion.</p>
+        <div class="contenedor-imagenes">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/20100516_Vacas_Vilarromar%C3%ADs%2C_Oroso-8-1.jpg/1024px-20100516_Vacas_Vilarromar%C3%ADs%2C_Oroso-8-1.jpg" alt="Alimento 1" id="alimento1">
+            <img src="https://www.eltiempo.com/files/article_main_mobile/uploads/2023/05/17/6465469aa3c67.png" alt="Alimento 2" id="alimento2">
+            <img src="https://i.blogs.es/82cc26/img_0435/650_1200.webp" alt="Alimento 3" id="alimento3">
+            <img src="https://uchile.cl/.imaging/default/dam/imagenes/Uchile/imagenes-noticias/155946_2_queso-2-800-l_L/jcr:content.jpg" alt="Alimento 4" id="alimento4">
+        </div>
+        <div id="informacion">
+            Selecciona un alimento para ver la información.
+        </div>
+
+        <script>
+            const alimento1 = document.getElementById("alimento1");
+            const alimento2 = document.getElementById("alimento2");
+            const alimento3 = document.getElementById("alimento3");
+            const alimento4 = document.getElementById("alimento4");
+            const informacion = document.getElementById("informacion");
+            const body = document.body;
+
+            // Define la información para cada alimento
+            const informacionAlimento1 = "Kilogramos de emisiones de gases por cada 100 gramos de:\n- Alimentos = 70.6\n- Proteínas = 35.5\nKilogramos de emisiones de gases por cada 1000 kilocalorías:\n- Total = 25.9";
+            const informacionAlimento2 = "Kilogramos de emisiones de gases por cada 100 gramos de:\n- Alimentos = 39.7\n- Proteínas = 19.9\nKilogramos de emisiones de gases por cada 1000 kilocalorías:\n- Total = 12.5";
+            const informacionAlimento3 = "Kilogramos de emisiones de gases por cada 100 gramos de:\n- Alimentos = 26.9\n- Proteínas = 18.2\nKilogramos de emisiones de gases por cada 1000 kilocalorías:\n- Total = 26.1";
+            const informacionAlimento4 = "Kilogramos de emisiones de gases por cada 100 gramos de:\n- Alimentos = 23.9\n- Proteínas = 10.8\nKilogramos de emisiones de gases por cada 1000 kilocalorías:\n- Total = 6.2";
     
-    <div class="seccion" id="seccion2"> 
+            // Agrega un controlador de eventos a las imágenes
+            alimento1.addEventListener("click", function() {
+                informacion.textContent = informacionAlimento1;
+            });
+            alimento2.addEventListener("click", function() {
+                informacion.textContent = informacionAlimento2;
+            });
+            alimento3.addEventListener("click", function() {
+                informacion.textContent = informacionAlimento3;
+            });
+    
+            alimento4.addEventListener("click", function() {
+                informacion.textContent = informacionAlimento4;
+            });body.addEventListener("click", function(event) {
+                if (event.target !== alimento1 && event.target !== alimento2 && event.target !== alimento3 && event.target !== alimento4) {
+                    informacion.textContent = "Selecciona un alimento para ver la información.";
+                }
+            });
+        </script>
+    </div>
+    
+    <div class="seccion" id="seccion3">
 
         <h1>Emisiones segun el tipo de alimento</h1>
-        <p>Contenido de la sección 2.</p>
-        <section class="alimentos">
-            <button onclick="toggleGraph(1)">carne</button>
+        <p>Contenido de la sección 3.</p>
+        <button onclick="toggleGraph(1)">carne</button>
         <div id="chartContainer1" >
           <canvas id="chart1" width="200" height="100"></canvas>
         </div>
+      
         <button onclick="toggleGraph(2)">pescado</button>
         <div id="chartContainer2" ></div>
           <canvas id="chart2" width="200" height="100"></canvas>
         </div>
+       
         <button onclick="toggleGraph(3)">frutas y verduras</button>
         <div id="chartContainer3" >
           <canvas id="chart3" width="200" height="100"></canvas>
@@ -80,23 +145,8 @@
         </div>
       
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="javascript.js"></script>
+        <script src="graficos.js"></script>
         </section>
-        <div class="con_fondo_verde">
-            <h1>Breve explicacion de como cada alimento produce emisiones de carbono</h1>
-        
-    </div>
-    
-    <div class="seccion" id="seccion3">
-        <h1>Grafico</h1>
-        <p>Contenido de la sección 3.</p>
-        <section class="grafico">
-            <!-- Aquí puedes agregar tu imagen -->
-            <img src="https://lh5.googleusercontent.com/88VfYTfZWk5cmkJAhw1gEbo7aHkbI2QFXZWRwq0BxK5mOA9Z1-f-MOBhPUFMZVCccYuaCtnkGY8XP8Y-6Hip13KbVoefd-Fzn5lir94BjPO9gc7fC6Tgrnvl9HCL5fzO-Kozs0psGqZidKOTozlZPTMqziv1dSP44gh2X5Fw6VROcWEeaubof61TkehV" alt="Grafico">
-        </section>
-        <div class="con_fondo_verde">
-            <h1>Breve explicacion del grafico</h1>
-    </div>
 
     <script>
         // Función para mostrar/ocultar el menú de "Inicio"
@@ -111,6 +161,15 @@
             }
         });
     </script>
+
+
+    <div id="conclusion" style="margin-top: 20px;">
+        <div class="con_fondo_verde"></div>
+            <h1>Conclusión</h1>
+            <p>La carne y los productos de origen animal provocan una visible cantidad de emisiones de carbono comparándose con otro tipo de alimentos, pero ¿por qué? 
+                En la industria ganadera, una parte importante de estos gases son producto de mantener y alimentar al ganado con hectáreas de pastizales que solo son utilizados como comida para el ganado</p>
+
+</div>
      
 </body>
 </html>
