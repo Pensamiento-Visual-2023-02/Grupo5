@@ -16,7 +16,8 @@ div.sub_con_fondo_verde {
 }
 
 div.con_fondo_verde {
-    background-color: green;
+    text-align: center;
+    background-color: red;
     /* Puedes ajustar otros estilos, como el color del texto o el tamaño */
     color: white; 
     padding: 10px;
