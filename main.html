@@ -57,13 +57,23 @@
             return ["format"].includes(name);
             });
         </script>
-        <div id="observablehq-viewof-year-6cebbf96"></div>
-        <div class="legend"></div>
-        <div id="observablehq-map-6cebbf96"></div>
-        <p>Credit: <a href="https://observablehq.com/@panpanan/world-map">World Map by Panacea WU</a></p>
-        <div class="contenedor-imagenes">
-            <img src="imagen1.jpg" alt="Colores Mapa" id="Colores Mapa">
-        </div>
+        <div id="observablehq-viewof-year-a3f5db28"></div>
+        <div id="observablehq-map-a3f5db28"></div>
+        <p>Credit: <a href="https://observablehq.com/d/9825ea5f200c1bd5@196">World Map by isidora herniquez bustamante&#039;s Workspace</a></p>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+        <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/9825ea5f200c1bd5@196.js?v=4";
+        new Runtime().module(define, name => {
+          if (name === "viewof year") return new Inspector(document.querySelector("#observablehq-viewof-year-a3f5db28"));
+          if (name === "map") return new Inspector(document.querySelector("#observablehq-map-a3f5db28"));
+          return ["format"].includes(name);
+        });
+        </script>
+    </div>
+    <div class="contenedor-imagenes">
+        <img src="leyenda.jpg" alt="Colores Mapa" id="Colores Mapa" style= "width:500px;">
     </div>
             <h1>Breve explicacion de como cada alimento produce emisiones de carbono</h1>
         
@@ -71,10 +81,26 @@
 
         <p>Selecciona un alimento para ver la informacion.</p>
         <div class="contenedor-imagenes">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/20100516_Vacas_Vilarromar%C3%ADs%2C_Oroso-8-1.jpg/1024px-20100516_Vacas_Vilarromar%C3%ADs%2C_Oroso-8-1.jpg" alt="Alimento 1" id="alimento1">
-            <img src="https://www.eltiempo.com/files/article_main_mobile/uploads/2023/05/17/6465469aa3c67.png" alt="Alimento 2" id="alimento2">
-            <img src="https://i.blogs.es/82cc26/img_0435/650_1200.webp" alt="Alimento 3" id="alimento3">
-            <img src="https://uchile.cl/.imaging/default/dam/imagenes/Uchile/imagenes-noticias/155946_2_queso-2-800-l_L/jcr:content.jpg" alt="Alimento 4" id="alimento4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/20100516_Vacas_Vilarromar%C3%ADs%2C_Oroso-8-1.jpg" width="300" alt="Alimento 1" id="alimento1" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
+            <button onclick="toggleGraph(1)">carne</button>
+            <div id="chartContainer1" >
+                <canvas id="dona1" aria-label="chart4" height="350" width="580"></canvas>
+            </div>
+
+            <img src="https://www.eltiempo.com/files/article_main_mobile/uploads/2023/05/17/6465469aa3c67.png" width="300" alt="Alimento 2" id="alimento2" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
+            
+            
+            <img src="https://i.blogs.es/82cc26/img_0435/650_1200.webp" width="300" alt="Alimento 3" id="alimento3" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
+            <button onclick="toggleGraph(3)">pescado</button>
+            <div id="chartContainer3" >
+                <canvas id="dona3" aria-label="chart3" height="350" width="580"></canvas>
+            </div>
+            
+            <img src="https://uchile.cl/.imaging/default/dam/imagenes/Uchile/imagenes-noticias/155946_2_queso-2-800-l_L/jcr:content.jpg" width="300" alt="Alimento 4" id="alimento4" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
+            <button onclick="toggleGraph(2)">productos lacteos</button>
+            <div id="chartContainer2" >
+                <canvas id="dona2" aria-label="chart2" height="350" width="580"></canvas>
+            </div>
         </div>
         <div id="informacion">
             Selecciona un alimento para ver la información.
@@ -119,34 +145,24 @@
 
         <h1>Emisiones segun el tipo de alimento</h1>
         <p>Contenido de la sección 3.</p>
-        <button onclick="toggleGraph(1)">carne</button>
-        <div id="chartContainer1" >
-          <canvas id="chart1" width="200" height="100"></canvas>
+   
+        <button onclick="toggleGraph(4)">procesados</button>
+            <div id="chartContainer4" >
+        <canvas id="dona4" aria-label="chart4" height="350" width="580"></canvas>
         </div>
-      
-        <button onclick="toggleGraph(2)">pescado</button>
-        <div id="chartContainer2" ></div>
-          <canvas id="chart2" width="200" height="100"></canvas>
+ 
+        <button onclick="toggleGraph(5)">frutas y verduras</button>
+            <div id="chartContainer5" >
+        <canvas id="dona5" aria-label="chart5" height="350" width="580"></canvas>
+
+        <div class="chart-container">
+            <canvas id="chartoId" aria-label="charto"></canvas>x
         </div>
-       
-        <button onclick="toggleGraph(3)">frutas y verduras</button>
-        <div id="chartContainer3" >
-          <canvas id="chart3" width="200" height="100"></canvas>
-        </div>
-       
-        <button onclick="toggleGraph(4)">productos lacteos</button>
-        <div id="chartContainer4" >
-          <canvas id="chart4" width="200" height="100"></canvas>
-        </div>
-       
-        <button onclick="toggleGraph(6)">comparacion</button>
-        <div id="chartContainer5" >
-          <canvas id="chart6" width="200" height="100"></canvas>
-        </div>
-      
+
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="graficos.js"></script>
         </section>
+
 
     <script>
         // Función para mostrar/ocultar el menú de "Inicio"

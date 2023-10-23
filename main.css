@@ -1,13 +1,24 @@
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chartoId{
+    height: 150px;
+}
+
 div.sub_con_fondo_verde {
     background-color: green;
     color: white;
     padding: 10px;
     front-
 }
+
 div.con_fondo_verde {
     background-color: green;
     /* Puedes ajustar otros estilos, como el color del texto o el tamaño */
-    color: white;
+    color: white; 
     padding: 10px;
 }
 /* styles.css */
@@ -76,3 +87,9 @@ header {
     text-decoration: none;
     color: white;
 }
+
+.contenedor-imagenes {
+    display:inline-block;
+
+}
+
