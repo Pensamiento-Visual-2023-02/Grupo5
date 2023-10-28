@@ -6,126 +6,62 @@ function restaurarCursor(imagen) {
     imagen.style.cursor = "auto";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Primer gráfico
-  var chart1Ctx = document.getElementById("dona1").getContext("2d");
-  var chart1 = new Chart(chart1Ctx, {
-      type: 'doughnut',
-      data: {
-          labels: ['vacuno', 'insectos','cordero','cerdo','aves','otros'],
-          datasets: [{
-              label: "online tutorial subjects",
-              data: [122.51,3.57,41.93,43.11,20.38,8.41],
-              backgroundColor: ['red', 'darkred', 'firebrick', 'indianred', 'lightcoral', 'tomato'],
-              hoverOffset: 5
-          }],
-      },
-      options: {
-          responsive: false,
-      },
-  });
+// Datos para el treemap
+const data = [
+    {
+      type: 'treemap',
+      labels: ['Procesados','Cerveza', 'Masas preparadas', 'Harina y azucar', 'Cafe', 'Aceite y grasas', 'Jugos',
+      'Proteinas de origen vegetal' , 'Enlatados', 'Otros',
+      'Frutas y verduras', 'Cereales', 'Citricos', 'Frutas', 'Hongos','Invernadero','Legumbres','Frutos secos','Vegetales','Berries',
+      'Carne','Vacuno', 'Insectos','Cordero','Cerdo','Aves','Otros',
+      'Productos lacteos','Quesos', 'Leche','Grasas','Otros','Yogurt',
+      'Productos marinos','Pescado fresco', 'Pescado congelado', 'Pescado procesado', 'Crustaceos y moluscos'
+      ],
+      parents: ['','Procesados','Procesados','Procesados','Procesados','Procesados','Procesados','Procesados','Procesados','Procesados',
+      '','Frutas y verduras', 'Frutas y verduras','Frutas y verduras','Frutas y verduras','Frutas y verduras','Frutas y verduras','Frutas y verduras','Frutas y verduras','Frutas y verduras',
+      '', 'Carne','Carne','Carne','Carne','Carne','Carne',
+      '', 'Productos lacteos', 'Productos lacteos', 'Productos lacteos', 'Productos lacteos', 'Productos lacteos',
+      '', 'Productos marinos','Productos marinos','Productos marinos','Productos marinos'
 
-  // Segundo gráfico
-  var chart2Ctx = document.getElementById("dona2").getContext("2d");
-  var chart2 = new Chart(chart2Ctx, {
-      type: 'doughnut',
-      data: {
-          labels: ['quesos', 'leche'
-            ,'grasas'
-            ,'otros'
-            ,'yogurt'],
 
-          datasets: [{
-              label: "online tutorial subjects",
-              data: [130.38, 6.32
-                , 13.93
-                , 4.94
-                , 9.45],
-              backgroundColor: ['gold', 'khaki', 'lightyellow', 'palegoldenrod', 'yellow'],
-              hoverOffset: 5
-          }],
-      },
-      options: {
-          responsive: false,
-      },
-  });
+      ],
+      values: [174.46, 2.18,17.91,29.31,14.9,33.15,25.8,24.72,10.76,15.73,
+        97.56,7.48, 2.49, 16.36, 2.06, 33.2, 4.25, 13.39, 11.49, 4.79,
+        239.91,122.51,3.57,41.93,43.11,20.38,8.41,
+        163.58, 130.38, 6.32, 13.93, 4.94, 9.45,
+        289.63,167.64, 38.29, 7.4, 76.3
 
-  // Tercer gráfico
-  var chart3Ctx = document.getElementById("dona3").getContext("2d");
-  var chart3 = new Chart(chart3Ctx, {
-      type: 'doughnut',
-      data: {
-          labels: ['pescado fresco', 'pescado congelado', 'pezcado procesado', 'crustaceos y moluscos'],
-          datasets: [{
-              label: "online tutorial subjects",
-              data: [167.64
-                , 38.29
-                , 7.4
-                , 76.3],
-                backgroundColor: ['darkblue', 'royalblue','lightsteelblue', 'dodgerblue'],
-              hoverOffset: 5
-          }],
-      },
-      options: {
-          responsive: false,
-      },
-  });
+      ],
+    }
+  ];
+  
+  const layout = {
+    margin: { t: 0, l: 0, r: 0, b: 0 },
+    paper_bgcolor: 'white',
+    autosize: true,
+  };
+  
+  Plotly.newPlot('treemap-container', data, layout);
 
-  var chart4Ctx = document.getElementById("dona4").getContext("2d");
-  var chart4 = new Chart(chart4Ctx, {
-      type: 'doughnut',
-      data: {
-          labels: ['cerveza', 'masas preparadas', 'harina y azucar', 'café', 'aceite y grasas', 'jugos', 
-          'proteinas de origen vegetal' , 'enlatados', 'otros'],
-          datasets: [{
-            label: 'emisiones de carbono por kg producido',
-            data: [2.18,
-              17.91,
-              29.31,
-              14.9,
-              33.15,
-              25.8,
-              24.72,
-              10.76,
-              15.73
-              ,174.46
-              ],
-              backgroundColor: ['yellow', 'aqua', 'pink', 'lightgreen', 'gold', 'lightblue','red','orange','black'],
-              hoverOffset: 5
-          }],
-      },
-      options: {
-          responsive: false,
-      },
-  });
+// Datos para el treemap
+const data2 = [
+  {
+    type: 'treemap',
+    labels: ['Emisiones de efecto invernadero','Carne roja', 'Pescado y productos marinos', 'Frutas y verduras', 'Productos lacteos', 'Procesados'],
+    parents: ['', 'Emisiones de efecto invernadero','Emisiones de efecto invernadero','Emisiones de efecto invernadero','Emisiones de efecto invernadero','Emisiones de efecto invernadero'],
+    values: [965.14,239.91, 289.63, 97.56, 163.58, 174.46],
+  }
+];
 
-  var chart5Ctx = document.getElementById("dona5").getContext("2d");
-  var chart5 = new Chart(chart5Ctx, {
-      type: 'doughnut',
-      data: {
-          labels: ['cereales'
-          ,'citricos'
-          ,'frutas'
-          ,'hongos'
-          ,'invernadero'
-          ,'legumbres'
-          ,'frutos secos'
-          ,'vegetales'
-          ,'berries'],
-          datasets: [{
-            label: 'emisiones de carbono por kg producido',
-            data: [7.48, 2.49, 16.36, 2.06, 33.2, 4.25, 13.39, 11.49, 4.79],
-              backgroundColor: ['green', 'lime', 'forestgreen', 'seagreen', 'limegreen', 'springgreen', 'mediumseagreen', 'chartreuse', 'darkolivegreen'],
-              hoverOffset: 5
-          }],
-      },
-      options: {
-          responsive: false,
-      },
-  });
+// Diseño y configuración del treemap
+const layout2 = {
+  margin: { t: 0, l: 0, r: 0, b: 0 },
+  paper_bgcolor: 'white',
+  autosize: true,
+};
 
-});
-
+// Crea el treemap
+Plotly.newPlot('treemap-comparison', data2, layout2);
 
 function toggleGraph(graphNumber) {
   var graphElement = document.getElementById('dona' + graphNumber);
