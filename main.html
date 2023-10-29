@@ -73,17 +73,20 @@
 
         <h2>Selecciona un alimento para ver la informacion.</h2>
         <div class="contenedor-imagenes">
-            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/XTWCVOJ5LZCTFDSMDYIVGMDXCU.jpg" width="300" alt="Alimento 1" id="alimento1" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
-
-            <img src="https://img.freepik.com/fotos-premium/salmonete-pescado-pescado-mar-mariscos-sobre-fondo-negro-vista-superior-espacio-copia-libre_187166-25416.jpg" width="300" alt="Alimento 3" id="alimento3" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
+            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/XTWCVOJ5LZCTFDSMDYIVGMDXCU.jpg" height="350" width="400" alt="Alimento 1" id="alimento1" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
             
-            <img src="https://us.123rf.com/450wm/serg1978/serg19782305/serg1978230500483/204114307-varios-tipos-de-productos-l%C3%A1cteos-reques%C3%B3n-crema-agria-fondo-negro-productos-naturales.jpg?ver=6" width="300" alt="Alimento 4" id="alimento4" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
+            <img src="https://www.semana.com/resizer/OcK9tqPseT5c2tww_uhnEtn4ynA=/1280x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/B27CUBGAZBDFBGY2K46PABXGII.jpg" height="350" width="400" alt="Alimento 2" id="alimento2" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
+
+            <img src="https://img.freepik.com/fotos-premium/salmonete-pescado-pescado-mar-mariscos-sobre-fondo-negro-vista-superior-espacio-copia-libre_187166-25416.jpg" height="350" width="400" alt="Alimento 3" id="alimento3" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
+            
+            <img src="https://us.123rf.com/450wm/serg1978/serg19782305/serg1978230500483/204114307-varios-tipos-de-productos-l%C3%A1cteos-reques%C3%B3n-crema-agria-fondo-negro-productos-naturales.jpg?ver=6" height="350" width="400" alt="Alimento 4" id="alimento4" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
         </div>
         <div id="informacion">
         </div>
 
         <script>
             const alimento1 = document.getElementById("alimento1");
+            const alimento2 = document.getElementById("alimento2");
             const alimento3 = document.getElementById("alimento3");
             const alimento4 = document.getElementById("alimento4");
             const informacion = document.getElementById("informacion");
@@ -91,6 +94,7 @@
 
             // Define la información para cada alimento
             const informacionAlimento1 = "\nKilogramos de emisiones de gases por cada 100 gramos de:\n - Alimentos = 70.6\n - Proteínas = 35.5\nKilogramos de emisiones de gases por cada 1000 kilocalorías:\n- Total = 25.9";
+            const informacionAlimento2 = "\nKilogramos de emisiones de gases por cada 100 gramos de:\n - Alimentos = 0.16\n - Proteínas = 17.2\nKilogramos de emisiones de gases por cada 1000 kilocalorías:\n- Total = 4.8";
             const informacionAlimento3 = "\nKilogramos de emisiones de gases por cada 100 gramos de:\n - Alimentos = 26.9\n - Proteínas = 18.2\nKilogramos de emisiones de gases por cada 1000 kilocalorías:\n - Total = 26.1";
             const informacionAlimento4 = "\nKilogramos de emisiones de gases por cada 100 gramos de:\n - Alimentos = 27.1\n - Proteínas = 20.3\nKilogramos de emisiones de gases por cada 1000 kilocalorías:\n - Total = 11.45";
 
@@ -98,6 +102,11 @@
             alimento1.addEventListener("click", function() {
                 informacion.textContent = informacionAlimento1;
             });
+
+            alimento2.addEventListener("click", function() {
+                informacion.textContent = informacionAlimento2;
+            });
+
             alimento3.addEventListener("click", function() {
                 informacion.textContent = informacionAlimento3;
             });
@@ -105,7 +114,7 @@
             alimento4.addEventListener("click", function() {
                 informacion.textContent = informacionAlimento4;
             });body.addEventListener("click", function(event) {
-                if (event.target !== alimento1 && event.target !== alimento3 && event.target !== alimento4) {
+                if (event.target !== alimento1 && event.target !== alimento2 && event.target !== alimento3 && event.target !== alimento4) {
                     informacion.textContent = "Información adicional.";
                 }
             });
