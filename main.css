@@ -15,8 +15,8 @@ div.sub_con_fondo_verde {
     front-
 }
 
-div.con_fondo_verde {
-    background-color: #FF0000;
+div.con_fondo_rojo {
+    background-color: #dc542e;
     /* Puedes ajustar otros estilos, como el color del texto o el tamaño */
     color: white;
     text-align: center;
@@ -88,23 +88,66 @@ header {
     text-decoration: none;
     color: white;
 }
+.barra-inicio {
+    background-color: #dc542e;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    margin-bottom: 50px;
+}
 
-.background-section {
-    background-image: url('pexels-tom-fisk-2606532.jpg'); /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-color: rgb(14, 40, 26);
-    color: #ffffff;
-    text-align: center; /* Alinea el contenido al centro de la sección */
-    color: black;
-    padding: 130px; /* Agrega un poco de espacio alrededor del contenido */
-  }
-  
-  .photo {
-    position: absolute;
-    top: 870px; /* Ajusta la posición superior según tus necesidades */
-    left: 940px; /* Ajusta la posición izquierda según tus necesidades */
-    width: 300px;
-    z-index: 1; /* Asegura que la imagen esté por encima del gráfico */}
+.barra-inicio h1 {
+    margin: 0;
+    font-size: 30px; /* Ajusta el tamaño de fuente según tus preferencias */
+}
+
+.barra-inicio p {
+    margin: 0;
+    font-size: 20px; /* Ajusta el tamaño de fuente según tus preferencias */
+}
+
+.barra-inicio .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 45px;
+}
+
+.barra-inicio .logo h1 {
+    font-weight: bold; /* Añade negrita según tus preferencias */
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    font-weight: bold; /* Añade negrita según tus preferencias */
+}
+
+/* Ajusta el margen superior del contenido principal para evitar superposición */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-top: 80px; /* Puedes ajustar este valor según tu preferencia */
+}
+
+
