@@ -43,26 +43,6 @@ const data = [
   
   Plotly.newPlot('treemap-container', data, layout);
 
-// Datos para el treemap
-const data2 = [
-  {
-    type: 'treemap',
-    labels: ['Emisiones de efecto invernadero','Carne roja', 'Pescado y productos marinos', 'Frutas y verduras', 'Productos lacteos', 'Procesados'],
-    parents: ['', 'Emisiones de efecto invernadero','Emisiones de efecto invernadero','Emisiones de efecto invernadero','Emisiones de efecto invernadero','Emisiones de efecto invernadero'],
-    values: [965.14,239.91, 289.63, 97.56, 163.58, 174.46],
-  }
-];
-
-// Diseño y configuración del treemap
-const layout2 = {
-  margin: { t: 0, l: 0, r: 0, b: 0 },
-  paper_bgcolor: 'white',
-  autosize: true,
-};
-
-// Crea el treemap
-Plotly.newPlot('treemap-comparison', data2, layout2);
-
 function toggleGraph(graphNumber) {
   var graphElement = document.getElementById('dona' + graphNumber);
   if (graphElement.style.display === 'none') {

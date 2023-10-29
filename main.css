@@ -88,3 +88,23 @@ header {
     text-decoration: none;
     color: white;
 }
+
+.background-section {
+    background-image: url('pexels-tom-fisk-2606532.jpg'); /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: rgb(14, 40, 26);
+    color: #ffffff;
+    text-align: center; /* Alinea el contenido al centro de la sección */
+    color: black;
+    padding: 130px; /* Agrega un poco de espacio alrededor del contenido */
+  }
+  
+  .photo {
+    position: absolute;
+    top: 870px; /* Ajusta la posición superior según tus necesidades */
+    left: 940px; /* Ajusta la posición izquierda según tus necesidades */
+    width: 300px;
+    z-index: 1; /* Asegura que la imagen esté por encima del gráfico */}
