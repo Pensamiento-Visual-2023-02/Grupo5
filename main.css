@@ -8,15 +8,10 @@
     height: 150px;
 }
 
-div.sub_con_fondo_verde {
-    background-color: green;
-    color: white;
-    padding: 10px;
-    front-
-}
 
-div.con_fondo_verde {
-    background-color: #FF0000;
+
+div.con_fondo_rojo {
+    background-color: #dc542e;
     /* Puedes ajustar otros estilos, como el color del texto o el tamaño */
     color: white;
     text-align: center;
