@@ -86,22 +86,23 @@
         <div class="con_fondo_rojo">
         
         <h2>Selecciona un alimento para ver la informacion.</h2>
+
         <div class="contenedor-imagenes">
             <div class="alimento">
                 <span class="nombre-imagen">Carne</span>
                 <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/XTWCVOJ5LZCTFDSMDYIVGMDXCU.jpg" height="350" width="400" alt="Carne" id="alimento1" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
-
             </div>
+
             <div class="alimento">
                 <span class="nombre-imagen">Verduras</span>
                 <img src="https://www.semana.com/resizer/OcK9tqPseT5c2tww_uhnEtn4ynA=/1280x0/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/B27CUBGAZBDFBGY2K46PABXGII.jpg" height="350" width="400" alt="Verduras" id="alimento2" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
-
             </div>
+
             <div class="alimento">
                 <span class="nombre-imagen">Pescado</span>
-                <img src="https://img.freepik.com/fotos-premium/salmonete-pescado-pescado-mar-mariscos-sobre-fondo-negro-vista-superior-espacio-copia-libre_187166-25416.jpg" height="350" width="400" alt="Pescado" id="alimento3" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
-                
+                <img src="https://img.freepik.com/fotos-premium/salmonete-pescado-pescado-mar-mariscos-sobre-fondo-negro-vista-superior-espacio-copia-libre_187166-25416.jpg" height="350" width="400" alt="Pescado" id="alimento3" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">  
             </div>
+            
             <div class="alimento">
                 <span class="nombre-imagen">Lácteos</span>
                 <img src="https://us.123rf.com/450wm/serg1978/serg19782305/serg1978230500483/204114307-varios-tipos-de-productos-l%C3%A1cteos-reques%C3%B3n-crema-agria-fondo-negro-productos-naturales.jpg?ver=6" height="350" width="400" alt="Lácteos" id="alimento4" onmouseover="cambiarCursor(this)" onmouseout="restaurarCursor(this)">
@@ -109,6 +110,7 @@
             </div>
         </div>
         <div id="informacion">
+            <p id="informacionTexto"></p>
         </div>
 
         <script>
@@ -118,6 +120,8 @@
             const alimento4 = document.getElementById("alimento4");
             const informacion = document.getElementById("informacion");
             const body = document.body;
+            
+            const informacionTexto = document.getElementById("informacionTexto");
 
             // Define la información para cada alimento
             const informacionAlimento1 = "\nKilogramos de emisiones de gases por cada 100 gramos de:\n - Alimentos = 70.6\n - Proteínas = 35.5\nKilogramos de emisiones de gases por cada 1000 kilocalorías:\n- Total = 25.9";
@@ -127,19 +131,23 @@
 
             // Agrega un controlador de eventos a las imágenes
             alimento1.addEventListener("click", function() {
-                informacion.textContent = informacionAlimento1;
+                informacionTexto.textContent = informacionAlimento1;
+                informacionTexto.style.fontSize = "20px";
             });
 
             alimento2.addEventListener("click", function() {
-                informacion.textContent = informacionAlimento2;
+                informacionTexto.textContent = informacionAlimento2;
+                informacionTexto.style.fontSize = "20px";
             });
 
             alimento3.addEventListener("click", function() {
-                informacion.textContent = informacionAlimento3;
+                informacionTexto.textContent = informacionAlimento3;
+                informacionTexto.style.fontSize = "20px";
             });
     
             alimento4.addEventListener("click", function() {
-                informacion.textContent = informacionAlimento4;
+                informacionTexto.textContent = informacionAlimento4;
+                informacionTexto.style.fontSize = "20px";
             });body.addEventListener("click", function(event) {
                 if (event.target !== alimento1 && event.target !== alimento2 && event.target !== alimento3 && event.target !== alimento4) {
                     informacion.textContent = "Información adicional.";
@@ -151,7 +159,6 @@
     <div class="seccion" id="seccion3">
 
         <h1>Emisiones segun el tipo de alimento</h1>
-        <p>Contenido de la sección 3.</p>
 
         <div id="treemap-container"></div>
 
@@ -185,8 +192,8 @@
     <div class="final" id="conclusion">
         <h1>Conclusión</h1>
         <p>La carne y los productos de origen animal provocan una visible cantidad de emisiones de carbono comparándose con otro tipo de alimentos, pero ¿por qué? 
-            En la industria ganadera, una parte importante de estos gases son producto de mantener y alimentar al ganado con hectáreas de pastizales que solo son utilizados como comida para el ganado</p>
-            Es por esto que se aconseja las dietas basadas en verduras para que se disminuyan las emisiones de carbono y aliviar el calentamiento global.
+            En la industria ganadera, una parte importante de estos gases son producto de mantener y alimentar al ganado con hectáreas de pastizales que solo son utilizados como comida para el ganado
+            Es por esto que se aconseja las dietas basadas en verduras para que se disminuyan las emisiones de carbono y aliviar el calentamiento global.</p>
         </div>
      
 </body>
