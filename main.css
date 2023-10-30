@@ -1,3 +1,10 @@
+#treemap-container{
+    width: 700px;
+    margin-left: 300px;
+    margin-bottom: 100px;
+    
+}
+
 .chart-container {
     display: flex;
     justify-content: center;
@@ -167,7 +174,7 @@ body {
 
   .photo {
     position: absolute;
-    top: 900px; /* Ajusta la posición superior según tus necesidades */
+    top: 700px; /* Ajusta la posición superior según tus necesidades */
     left: 940px; /* Ajusta la posición izquierda según tus necesidades */
     width: 300px;
     z-index: 1; /* Asegura que la imagen esté por encima del gráfico */
