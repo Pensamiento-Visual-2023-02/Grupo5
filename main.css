@@ -33,7 +33,11 @@ div.sub_con_fondo_verde {
     padding: 10px;
 }
 
-div.con_fondo_rojo {
+.titulos {
+    text-align: center;
+}
+
+.con_fondo_rojo {
     background-color: #ffffff;
     /* Puedes ajustar otros estilos, como el color del texto o el tamaño */
     color: rgb(0, 0, 0);
@@ -41,6 +45,7 @@ div.con_fondo_rojo {
     padding: 10px;
     font-size: 20px;
     top: 50px;
+    padding: 50px 100px 50px 100px;;
     
 }
 /* styles.css */
