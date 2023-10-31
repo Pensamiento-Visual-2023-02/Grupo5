@@ -191,6 +191,7 @@ body {
     z-index: 1; /* Asegura que la imagen esté por encima del gráfico */
 }
 
+
 .leyenda{
     top: 100px;
     text-align: left;
