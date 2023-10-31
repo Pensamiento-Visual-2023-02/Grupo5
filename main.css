@@ -5,6 +5,17 @@
     
 }
 
+.contenedor-imagenf {
+    width: 400px; /* Establece el ancho deseado para el contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente en la página */
+    margin-left: 700px; /* Centra el contenido (en este caso, la imagen) horizontalmente en el contenedor */
+  }
+  
+  .contenedor-imagenf img {
+    max-width: 100%; /* Ajusta el ancho de la imagen para que no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+  
 .chart-container {
     display: flex;
     justify-content: center;
