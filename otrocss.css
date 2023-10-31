@@ -1,0 +1,18 @@
+.alaprincipal{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Arial", sans-serif;
+}
+
+.imagena{
+    text-align: center;  
+}
+
+body {
+    background-image: url('pexels-tom-fisk-2606532.jpg'); /* Reemplaza 'tu_imagen.jpg' con la ruta de la imagen que desees utilizar como fondo */
+    background-size: cover; /* Otras propiedades de fondo opcionales */
+    background-repeat: no-repeat;
+  }
+  
