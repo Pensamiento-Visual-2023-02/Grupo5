@@ -7,9 +7,10 @@
 
 .contenedor-imagenf {
     width: 400px; /* Establece el ancho deseado para el contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente en la página */
-    margin-left: 700px; /* Centra el contenido (en este caso, la imagen) horizontalmente en el contenedor */
-  }
+    display: flex;
+    margin-left: 500px;
+
+}
   
   .contenedor-imagenf img {
     max-width: 100%; /* Ajusta el ancho de la imagen para que no exceda el ancho del contenedor */
@@ -47,6 +48,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    width: 100%; /* Establece el ancho del body al 100% del ancho del viewport o del elemento contenedor. */
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 header {
@@ -227,8 +231,8 @@ body {
   .final {
     width: 100%;
     background-color: #ffffff;
-    text-align: center;
-    padding: 10px;
+    text-align: left;
+    padding: 50px 100px 50px 100px;
     color: #000;
     
   }
