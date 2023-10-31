@@ -29,3 +29,57 @@
     white-space: nowrap;
     margin-bottom: 100px;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.footer {
+    background-color: #153f1c;
+}
+
+.conteiner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-links h4 {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    font-weight: 500;
+    border-bottom: 2px solid #00C3FF;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.footer-links ul li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #BBBBBB;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
+}
+
+.gracias {
+    color: #FFFFFF;
+}
+
+.uc {
+    vertical-align: middle; /* Alinea verticalmente la imagen con el texto si es necesario */
+    margin-left: 1300px; /* Agrega espacio entre la imagen y el contenido */
+}
